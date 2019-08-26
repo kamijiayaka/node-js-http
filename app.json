@@ -1,0 +1,8 @@
+{
+  "name": "Enquetes",
+  "description": "Enquetes for favorite foods.",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+
+}
