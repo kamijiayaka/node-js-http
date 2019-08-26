@@ -1,6 +1,7 @@
 {
   "name": "Enquetes",
   "description": "Enquetes for favorite foods.",
+  "repository": "https://github.com/kamijiayaka/node-js-http",
   "logo": "",
   "keywords": ["node"],
   "image": "heroku/nodejs"
