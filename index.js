@@ -2,9 +2,24 @@
 const http = require('http'); 
 const pug =require('pug');
 const now = new Date();
-const server = http.createServer((req, res) => {
- 
+const auth = require('http-auth');
+const basic= auth.basic(
+  {realm:'Enquetes Area.'},
+  (username,password,callback)=>{
+    callback(username==='guest'&&password==='xaXZJQmE');
+  });
+
+const server = http.createServer(basic,(req, res) => {
+
   console.info('['+ now +']requested by'+req.connection.remoteAddress);
+
+  if (req.url==='/logout'){
+    res.writeHead(401,{
+      'Content-Type': 'text/plain; charset=utf-8'
+    });
+    res.end('ログアウト')
+    return;
+  }
   res.writeHead(200, {
     'Content-Type': 'text/html; charset=utf-8'
   });
